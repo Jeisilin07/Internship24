@@ -14,8 +14,8 @@ public class EditLead {
 		driver.get("https://login.salesforce.com/");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		driver.findElement(By.xpath("//input[@id='username']")).sendKeys("jeisjohn07@testleaf.com");
-		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Jeis1607"); 
+		driver.findElement(By.xpath("//input[@id='username']")).sendKeys("learners@testleaf.com");
+		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Leaf@1234"); 
 		driver.findElement(By.xpath("//input[@id='Login']")).click();
 		driver.findElement(By.xpath("//p[text()='Sales']")).click();
         WebElement lead = driver.findElement(By.xpath("//span[text()='Leads'][1]"));
@@ -23,7 +23,7 @@ public class EditLead {
         driver.findElement(By.xpath("//input[@name='Lead-search-input']")).sendKeys("Kumar");
         driver.findElement(By.xpath("//a[@title='Edit']")).click();
         driver.findElement(By.xpath("//input[@name='FirstName']")).sendKeys("Ganesh");
-        driver.findElement(By.xpath("//button[@title='Save']")).click();
+        driver.findElement(By.xpath("//button[@name='SaveEdit']")).click();
 
 	}
 
