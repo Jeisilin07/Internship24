@@ -1,4 +1,4 @@
-package day1;
+package salesforce;
 
 import java.time.Duration;
 
@@ -14,20 +14,20 @@ public class CreateLead {
 		driver.get("https://login.salesforce.com/");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		driver.findElement(By.xpath("//input[@id='username']")).sendKeys("learners@testleaf.com");
-		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Leaf@1234"); 
+		driver.findElement(By.xpath("//input[@id='username']")).sendKeys("jeisjohn@testleaf.com");
+		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("jeis1607"); 
 		driver.findElement(By.xpath("//input[@id='Login']")).click();
-        driver.findElement(By.xpath("//div[@class='slds-icon-waffle']")).click();
-        driver.findElement(By.xpath("//button[@class='slds-button']")).click();
-        driver.findElement(By.xpath("//p[text()='Sales']")).click();
-        WebElement lead = driver.findElement(By.xpath("//span[text()='Leads'][1]"));
-        driver.executeScript("arguments[0].click()",lead);
-        driver.findElement(By.xpath("//div[@title='New']")).click();
-        WebElement drop = driver.findElement(By.xpath("(//button[@role='combobox'])[3]"));
-        driver.executeScript("arguments[0].click()",drop);
-        driver.findElement(By.xpath("//label[text()='Last Name']/following::input[1]")).sendKeys("Kumar");
-        driver.findElement(By.xpath("//label[text()='Company']/following::input[1]")).sendKeys("Testleaf");
-        driver.findElement(By.xpath("//button[@name='SaveEdit']")).click();
+                driver.findElement(By.xpath("//div[@class='slds-icon-waffle']")).click();
+                driver.findElement(By.xpath("//button[@class='slds-button']")).click();
+                driver.findElement(By.xpath("//p[text()='Sales']")).click();
+                WebElement lead = driver.findElement(By.xpath("//span[text()='Leads'][1]"));
+                driver.executeScript("arguments[0].click()",lead);
+                driver.findElement(By.xpath("//button[@class='slds-button slds-button_neutral middleButton actionListButton']")).click();
+                WebElement drop = driver.findElement(By.xpath("(//button[@role='combobox'])[3]"));
+                driver.executeScript("arguments[0].click()",drop);
+                driver.findElement(By.xpath("//input[@name='lastName']")).sendKeys("Kumar");
+                driver.findElement(By.xpath("//input[@name='Company']")).sendKeys("Testleaf");
+                driver.findElement(By.xpath("//button[@name='SaveEdit']")).click();
         
 	}
 
