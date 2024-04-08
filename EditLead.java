@@ -1,4 +1,4 @@
-package day1;
+package salesforce;
 
 import java.time.Duration;
 
@@ -14,17 +14,21 @@ public class EditLead {
 		driver.get("https://login.salesforce.com/");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		driver.findElement(By.xpath("//input[@id='username']")).sendKeys("learners@testleaf.com");
-		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Leaf@1234"); 
+		driver.findElement(By.xpath("//input[@id='username']")).sendKeys("jeisjohn@testleaf.com");
+		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("jeis1607"); 
 		driver.findElement(By.xpath("//input[@id='Login']")).click();
-		driver.findElement(By.xpath("//p[text()='Sales']")).click();
-        WebElement lead = driver.findElement(By.xpath("//span[text()='Leads'][1]"));
-        driver.executeScript("arguments[0].click()",lead);
-        driver.findElement(By.xpath("//input[@name='Lead-search-input']")).sendKeys("Kumar");
-        driver.findElement(By.xpath("//a[@title='Edit']")).click();
-        driver.findElement(By.xpath("//input[@name='FirstName']")).sendKeys("Ganesh");
-        driver.findElement(By.xpath("//button[@name='SaveEdit']")).click();
-
+		driver.findElement(By.xpath("//div[@class='slds-icon-waffle']")).click();
+	        driver.findElement(By.xpath("//button[@class='slds-button']")).click();
+	        driver.findElement(By.xpath("//p[text()='Sales']")).click();
+	        WebElement lead = driver.findElement(By.xpath("//span[text()='Leads'][1]"));
+	        driver.executeScript("arguments[0].click()",lead);
+		driver.findElement(By.xpath("//a[@title='Edit']")).click();
+		driver.findElement(By.xpath("//input[@name='firstName']")).sendKeys("Ganesh");
+		WebElement scroll = driver.findElement(By.xpath("//button[@aria-label='Lead Status-Current Selection:New']"));
+		driver.executeScript("arguments[0].click();",scroll);
+		driver.findElement(By.xpath("//span[@title='Contacted']")).click();
+		driver.findElement(By.xpath("//button[@name='SaveEdit']")).click();
+       
 	}
 
 }
