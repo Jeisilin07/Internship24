@@ -31,24 +31,19 @@ public class ManageLead {
 		driver.findElement(By.xpath("(//div[@class='slds-dropdown__item'])[1]")).click();
 		driver.findElement(By.xpath("//div[@class='slds-form-element__control slds-input-has-icon slds-input-has-icon_right']")).click();
 		driver.findElement(By.xpath("(//td[@class='slds-is-today']/following-sibling::td)[1]")).click();
-		driver.findElement(By.xpath("(//span[contains(text(),'Save')])[4]")).click();
+		driver.findElement(By.xpath("//button[@class='slds-button slds-button--brand cuf-publisherShareButton uiButton']")).click();
 		driver.findElement(By.xpath("//button[@value='SendEmail']")).click();
 		driver.findElement(By.xpath("(//input[@aria-describedby='recipientsInputLabel'])[1]")).sendKeys("kumar@testleaf.com");
-	    driver.findElement(By.xpath("//input[@placeholder='Enter Subject...']")).sendKeys("managelead");
-	  
-		driver.switchTo().frame(0);
-		Thread.sleep(3000);
-		driver.switchTo().frame(0);
-		driver.findElement(By.xpath("//body[@class='cke_editable cke_editable_themed cke_contents_ltr']")).sendKeys("updated leads are available");
-		driver.switchTo().defaultContent();
-		driver.findElement(By.xpath("//button[@class='slds-button slds-button--brand cuf-publisherShareButton send uiButton']")).click();
+	        driver.findElement(By.xpath("//input[@placeholder='Enter Subject...']")).sendKeys("managelead");
+	    
+		driver.findElement(By.xpath("//button[@class='slds-button slds-button--brand cuf-publisherShareButton  send uiButton']")).click();
 		WebElement emailstatus = driver.findElement(By.xpath("(//span[text()='Show more actions'])[2]/.."));
 		driver.executeScript("arguments[0].click();",emailstatus);
-        WebElement click = driver.findElement(By.xpath("//div[@title='Change Status']"));
-        driver.executeScript("arguments[0].click();",click);
+                WebElement click = driver.findElement(By.xpath("//div[@title='Change Status']"));
+                driver.executeScript("arguments[0].click();",click);
 		driver.findElement(By.xpath("(//a[contains(text(),'Not Started')])[1]")).click();
 		driver.findElement(By.xpath("//a[@title='Completed']")).click();
-		driver.findElement(By.xpath("(//span[contains(text(),'Save')])[4]")).click();
+		driver.findElement(By.xpath("(//span[text()='Save'])[2]")).click();
 	}
 
 }
