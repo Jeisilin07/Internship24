@@ -22,9 +22,7 @@ public class CreateLead {
         driver.findElement(By.xpath("//p[text()='Sales']")).click();
         WebElement lead = driver.findElement(By.xpath("//span[text()='Leads'][1]"));
         driver.executeScript("arguments[0].click()",lead);
-        driver.findElement(By.xpath("//button[@class='slds-button slds-button_neutral middleButton actionListButton']")).click();
-        WebElement drop = driver.findElement(By.xpath("(//button[@role='combobox'])[3]"));
-        driver.executeScript("arguments[0].click()",drop);
+        driver.findElement(By.xpath("//div[@title='New']")).click();
         driver.findElement(By.xpath("//button[@name='salutation']")).click();
 	driver.findElement(By.xpath("//span[@title='Mr.']")).click();
         driver.findElement(By.xpath("//input[@name='lastName']")).sendKeys("Kumar");
